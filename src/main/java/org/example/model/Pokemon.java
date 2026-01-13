@@ -1,13 +1,14 @@
 package org.example.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "pokemon")
 public class Pokemon {
     @Id
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private String id;
-
     private String nome;
     private String[] tipo;
     private String nivel;
